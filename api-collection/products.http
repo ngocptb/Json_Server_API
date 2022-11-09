@@ -1,0 +1,43 @@
+
+@baseUrl = http://localhost:3000/api
+
+@resourceName=products
+# @Name getAll
+GET {{baseUrl}}/{{resourceName}}
+
+###
+# @Name filter
+GET {{baseUrl}}/{{resourceName}}?name_like=Will
+
+###
+# @Name pagination
+GET {{baseUrl}}/{{resourceName}}?_page=1&_limit=5
+
+
+
+###
+
+POST {{baseUrl}}/{{resourceName}}
+Content-Type: application/json
+
+  
+{
+    "name": "Mr. Dong Young Ho",
+    "color": "#168628",
+    "description": "Dolor temporibus accusantium rem veritatis. Saepe ullam qui suscipit iusto et quia sint. Ullam veniam mollitia reprehenderit omnis perferendis. Eum dicta est illo harum commodi velit autem assumenda. Enim repellendus inventore error exercitationem aliquam tenetur ut est."
+}
+
+###
+PATCH  {{baseUrl}}/{{resourceName}}/avsChsr
+Content-Type: application/json
+
+{
+  "name": "Mr. Dong Young Ho",
+  "color": "#168628",
+  "description": "I miss you",
+  "updatedAt": 1667834054654,
+  "id": "avsChsr"
+}
+
+###
+DELETE {{baseUrl}}/{{resourceName}}/2
